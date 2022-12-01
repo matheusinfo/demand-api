@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matheus\\Documents\\Dev\\CSharp\\IWantApp\\IWantApp.csproj": {}
+    "C:\\Users\\Matheus\\Documents\\Dev\\Home\\CSharp\\IWantApp\\IWantApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matheus\\Documents\\Dev\\CSharp\\IWantApp\\IWantApp.csproj": {
+    "C:\\Users\\Matheus\\Documents\\Dev\\Home\\CSharp\\IWantApp\\IWantApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matheus\\Documents\\Dev\\CSharp\\IWantApp\\IWantApp.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus\\Documents\\Dev\\Home\\CSharp\\IWantApp\\IWantApp.csproj",
         "projectName": "IWantApp",
-        "projectPath": "C:\\Users\\Matheus\\Documents\\Dev\\CSharp\\IWantApp\\IWantApp.csproj",
+        "projectPath": "C:\\Users\\Matheus\\Documents\\Dev\\Home\\CSharp\\IWantApp\\IWantApp.csproj",
         "packagesPath": "C:\\Users\\Matheus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matheus\\Documents\\Dev\\CSharp\\IWantApp\\obj\\",
+        "outputPath": "C:\\Users\\Matheus\\Documents\\Dev\\Home\\CSharp\\IWantApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,9 +44,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
             "Flunt.Br": {
               "target": "Package",
               "version": "[2.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
