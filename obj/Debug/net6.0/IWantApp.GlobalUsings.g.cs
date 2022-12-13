@@ -13,6 +13,7 @@ global using global::IWantApp.Main.Endpoints.Security.Dto;
 global using global::Microsoft.AspNetCore.Authentication.JwtBearer;
 global using global::Microsoft.AspNetCore.Authorization;
 global using global::Microsoft.AspNetCore.Builder;
+global using global::Microsoft.AspNetCore.Diagnostics;
 global using global::Microsoft.AspNetCore.Hosting;
 global using global::Microsoft.AspNetCore.Http;
 global using global::Microsoft.AspNetCore.Identity;

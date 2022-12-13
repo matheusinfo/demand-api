@@ -23,6 +23,7 @@
     <Using Include="Microsoft.EntityFrameworkCore.Infrastructure"/>
     <Using Include="Microsoft.AspNetCore.Authentication.JwtBearer"/>
     <Using Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore"/>
+    <Using Include="Microsoft.AspNetCore.Diagnostics"/>
 
     <Using Include="IWantApp.Domain.Product"/>
     <Using Include="IWantApp.Infra.Db.SqlServer.Data"/>
