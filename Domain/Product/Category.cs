@@ -1,6 +1,4 @@
-﻿using Flunt.Validations;
-
-namespace IWantApp.Domain.Product;
+﻿namespace IWantApp.Domain.Product;
 
 public class Category : Entity {
     public string Name { get; private set; }

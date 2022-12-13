@@ -1,8 +1,4 @@
-﻿using IWantApp.Infra.Db.SqlServer.Data;
-using IWantApp.Main.Endpoints.Categories.Dto;
-using Microsoft.AspNetCore.Authorization;
-
-namespace IWantApp.Main.Endpoints.Categories;
+﻿namespace IWantApp.Main.Endpoints.Categories;
 
 public class CategoryGetAll {
     public static string Template => "/category";

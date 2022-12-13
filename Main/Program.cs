@@ -1,13 +1,3 @@
-using System.Text;
-using IWantApp.Infra.Db.SqlServer.Data;
-using IWantApp.Main.Endpoints.Categories;
-using IWantApp.Main.Endpoints.Employees;
-using IWantApp.Main.Endpoints.Security;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.IdentityModel.Tokens;
-
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSqlServer<ApplicationDbContext>(builder.Configuration["ConnectionString:DEFAULT"]);
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => {

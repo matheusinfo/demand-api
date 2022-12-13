@@ -1,10 +1,4 @@
-﻿using IWantApp.Main.Endpoints.Employees.Dto;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
-
-namespace IWantApp.Main.Endpoints.Employees;
+﻿namespace IWantApp.Main.Endpoints.Employees;
 
 public class EmployeePost {
     public static string Template => "/employee";

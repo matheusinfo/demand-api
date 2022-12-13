@@ -1,7 +1,4 @@
-﻿using IWantApp.Infra.Db.SqlServer.Data;
-using Microsoft.AspNetCore.Authorization;
-
-namespace IWantApp.Main.Endpoints.Employees;
+﻿namespace IWantApp.Main.Endpoints.Employees;
 
 public class EmployeeGetAll {
     public static string Template => "/employee";

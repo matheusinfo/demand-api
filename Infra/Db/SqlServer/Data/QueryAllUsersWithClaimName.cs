@@ -1,8 +1,4 @@
-﻿using Dapper;
-using IWantApp.Main.Endpoints.Employees.Dto;
-using Microsoft.Data.SqlClient;
-
-namespace IWantApp.Infra.Db.SqlServer.Data;
+﻿namespace IWantApp.Infra.Db.SqlServer.Data;
 
 public class QueryAllUsersWithClaimName {
     private readonly IConfiguration configuration;

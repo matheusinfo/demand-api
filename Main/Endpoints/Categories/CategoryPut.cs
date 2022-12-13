@@ -1,10 +1,4 @@
-﻿using System.Security.Claims;
-using IWantApp.Infra.Db.SqlServer.Data;
-using IWantApp.Main.Endpoints.Categories.Dto;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-
-namespace IWantApp.Main.Endpoints.Categories;
+﻿namespace IWantApp.Main.Endpoints.Categories;
 
 public class CategoryPut {
     public static string Template => "/category{id:guid}";
