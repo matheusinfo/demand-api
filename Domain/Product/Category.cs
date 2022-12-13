@@ -23,9 +23,11 @@ public class Category : Entity {
         ValidateCategory();
     }
 
-    public void EditInfo(string name, bool active) {
+    public void EditInfo(string name, bool active, string editedBy) {
         Active = active;
         Name = name;
+        EditedBy = editedBy;
+        EditedOn = DateTime.Now;
 
         ValidateCategory();
     }

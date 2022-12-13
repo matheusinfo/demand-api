@@ -1,4 +1,5 @@
 ﻿using IWantApp.Main.Endpoints.Employees.Dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -10,7 +11,9 @@ public class EmployeePost {
     public static string[] Methods => new string[] { HttpMethod.Post.ToString() };
     public static  Delegate Handle => Action;
 
-    public static IResult Action([FromBody] EmployeeRequest employeeRequest, UserManager<IdentityUser> userManager) {
+    [Authorize(Policy = "EmployeePolicy")]
+    public static IResult Action([FromBody] EmployeeRequest employeeRequest, HttpContext http, UserManager<IdentityUser> userManager) {
+        var userId = http.User.Claims.First(claims => claims.Type == ClaimTypes.NameIdentifier).Value;
         var user = new IdentityUser {
             UserName = employeeRequest.Email,
             Email = employeeRequest.Email,
@@ -23,7 +26,8 @@ public class EmployeePost {
 
         var userClaims = new List<Claim>{
                new Claim("EmployeeCode", employeeRequest.EmployeeCode),
-               new Claim("Name", employeeRequest.Name)
+               new Claim("Name", employeeRequest.Name),
+               new Claim("CreatedBy", userId)
         };
 
         var claimsResult = userManager.AddClaimsAsync(user, userClaims).Result;
