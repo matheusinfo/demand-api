@@ -1,6 +1,7 @@
 ﻿using IWantApp.Domain.Product;
 using IWantApp.Infra.Db.SqlServer.Data;
 using IWantApp.Main.Endpoints.Categories.Dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IWantApp.Main.Endpoints.Categories;

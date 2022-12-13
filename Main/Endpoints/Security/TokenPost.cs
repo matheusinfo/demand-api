@@ -1,7 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using IWantApp.Main.Endpoints.Security.Dto;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
 
 namespace IWantApp.Main.Endpoints.Security;
 
@@ -14,7 +17,7 @@ public class TokenPost{
     public static IResult Action(LoginRequest loginRequest, IConfiguration configuration, UserManager<IdentityUser> userManager){
         var user = userManager.FindByEmailAsync(loginRequest.Email).Result;
 
-        if(!userManager.checkPassawordAsync(user, loginRequest.Password).Result || user == null){
+        if(!userManager.CheckPasswordAsync(user, loginRequest.Password).Result || user == null){
             return Results.BadRequest();
         }
 
@@ -28,7 +31,7 @@ public class TokenPost{
             Issuer = configuration["JwtBearerTokenSettings:Issuer"],
         };
 
-        var tokenHandler = new JwtSecutiryTokenHandler();
+        var tokenHandler = new JwtSecurityTokenHandler();
         var token = tokenHandler.CreateToken(tokenDescriptor);
          
         return Results.Ok(new { 

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KPT9qcaEiih2NGZJm1C44AWIQF7I4x1GaKcQgNMfH9XAIlroSyaM7+OdqkqramQD4LW5hCWQSbjvDfi8dkrw8A==",
+  "dgSpecHash": "pY4hejYLwUofW958h+3qnN1vp2lhCoxgAoP+l5dfpKHqmx0doD61wbdWX2oWXU0Ih7xQZ77b6hJCzTHAAJg76w==",
   "success": true,
   "projectFilePath": "/home/matheus/Documents/dev/home/c#/demand-api/IWantApp.csproj",
   "expectedPackageFiles": [
+    "/home/matheus/.nuget/packages/dapper/2.0.123/dapper.2.0.123.nupkg.sha512",
     "/home/matheus/.nuget/packages/flunt/2.0.3/flunt.2.0.3.nupkg.sha512",
     "/home/matheus/.nuget/packages/flunt.br/2.0.0/flunt.br.2.0.0.nupkg.sha512",
     "/home/matheus/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
