@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/matheus/Documents/dev/home/c#/demand-api/IWantApp.csproj": {}
+    "C:\\Users\\Matheus\\Documents\\Dev\\Home\\CSharp\\IWantApp\\IWantApp.csproj": {}
   },
   "projects": {
-    "/home/matheus/Documents/dev/home/c#/demand-api/IWantApp.csproj": {
+    "C:\\Users\\Matheus\\Documents\\Dev\\Home\\CSharp\\IWantApp\\IWantApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/matheus/Documents/dev/home/c#/demand-api/IWantApp.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus\\Documents\\Dev\\Home\\CSharp\\IWantApp\\IWantApp.csproj",
         "projectName": "IWantApp",
-        "projectPath": "/home/matheus/Documents/dev/home/c#/demand-api/IWantApp.csproj",
-        "packagesPath": "/home/matheus/.nuget/packages/",
-        "outputPath": "/home/matheus/Documents/dev/home/c#/demand-api/obj/",
+        "projectPath": "C:\\Users\\Matheus\\Documents\\Dev\\Home\\CSharp\\IWantApp\\IWantApp.csproj",
+        "packagesPath": "C:\\Users\\Matheus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matheus\\Documents\\Dev\\Home\\CSharp\\IWantApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/matheus/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Matheus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -68,6 +70,14 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Serilog.Sinks.MSSqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -84,20 +94,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.11, 6.0.11]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[6.0.11, 6.0.11]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.11, 6.0.11]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -106,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

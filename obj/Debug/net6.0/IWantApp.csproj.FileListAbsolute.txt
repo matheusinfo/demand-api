@@ -131,3 +131,5 @@ C:\Users\Matheus\Documents\Dev\Home\CSharp\IWantApp\obj\Debug\net6.0\scopedcss\b
 C:\Users\Matheus\Documents\Dev\Home\CSharp\IWantApp\obj\Debug\net6.0\IWantApp.csproj.CopyComplete
 C:\Users\Matheus\Documents\Dev\Home\CSharp\IWantApp\obj\Debug\net6.0\IWantApp.genruntimeconfig.cache
 C:\Users\Matheus\Documents\Dev\Home\CSharp\IWantApp\obj\Debug\net6.0\ref\IWantApp.dll
+C:\Users\Matheus\Documents\Dev\Home\CSharp\IWantApp\bin\Debug\net6.0\Dapper.dll
+C:\Users\Matheus\Documents\Dev\Home\CSharp\IWantApp\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
