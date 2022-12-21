@@ -1,10 +1,12 @@
-﻿namespace IWantApp.Domain;
+﻿using Flunt.Notifications;
 
-public abstract class Entity : Notifiable<Notification> {
-    public Entity() {
+namespace IWantApp.Domain;
+
+public abstract class Entity : Notifiable<Notification>
+{
+    public Entity()
+    {
         Id = Guid.NewGuid();
-        CreatedOn = DateTime.Now;
-        EditedOn = DateTime.Now;
     }
 
     public Guid Id { get; set; }

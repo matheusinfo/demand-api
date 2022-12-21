@@ -1,28 +1,27 @@
-﻿namespace IWantApp.Infra.Db.SqlServer.Data;
+﻿namespace IWantApp.Infra.Data;
 
-public class QueryAllUsersWithClaimName {
+public class QueryAllUsersWithClaimName
+{
     private readonly IConfiguration configuration;
 
-    public QueryAllUsersWithClaimName(IConfiguration configuration) {
+    public QueryAllUsersWithClaimName(IConfiguration configuration)
+    {
         this.configuration = configuration;
     }
 
-    public async Task<IEnumerable<EmployeeResponse>> Execute(int page, int rows) {
+    public async Task<IEnumerable<EmployeeResponse>> Execute(int page, int rows)
+    {
         var db = new SqlConnection(configuration["ConnectionString:IWantDb"]);
         var query =
-            @"select Email, ClaimValue as Name
-            from AspNetUsers user inner
-            join AspNetUserClaims claim
-            on user.id = claim.UserId and claimtype = 'Name'
+            @"select Email, ClaimValue as Name 
+            from AspNetUsers u inner
+            join AspNetUserClaims c
+            on u.id = c.UserId and claimtype = 'Name'
             order by name
-            OFFSET (@page - 1) * @rows ROWS
-            FETCH NEXT @rows ROWS ONLY";
-
-        var result = await db.QueryAsync<EmployeeResponse>(
+            OFFSET (@page -1 ) * @rows ROWS FETCH NEXT @rows ROWS ONLY";
+        return await db.QueryAsync<EmployeeResponse>(
             query,
             new { page, rows }
         );
-        
-        return result;
     }
 }
