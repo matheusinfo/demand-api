@@ -1,22 +1,25 @@
-﻿namespace IWantApp.Main.Endpoints.Categories;
+﻿namespace IWantApp.Endpoints.Categories;
 
-public class CategoryPost {
-    public static string Template => "/category";
+public class CategoryPost
+{
+    public static string Template => "/categories";
     public static string[] Methods => new string[] { HttpMethod.Post.ToString() };
-    public static  Delegate Handle => Action;
+    public static Delegate Handle => Action;
 
     [Authorize(Policy = "EmployeePolicy")]
-    public static async Task<IResult> Action([FromBody] CategoryRequest categoryRequest, HttpContext http, ApplicationDbContext context) {
-        var userId = http.User.Claims.First(claims => claims.Type == ClaimTypes.NameIdentifier).Value;
+    public static async Task<IResult> Action(CategoryRequest categoryRequest, HttpContext http, ApplicationDbContext context)
+    {
+        var userId = http.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
         var category = new Category(categoryRequest.Name, userId, userId);
 
-        if (!category.IsValid) {
+        if (!category.IsValid)
+        {
             return Results.ValidationProblem(category.Notifications.ConvertToProblemDetails());
-        }
+        }    
 
         await context.Categories.AddAsync(category);
         await context.SaveChangesAsync();
 
-        return Results.Created($"/category/{category.Id}", category.Id);
+        return Results.Created($"/categories/{category.Id}", category.Id);
     }
 }

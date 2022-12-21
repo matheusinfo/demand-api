@@ -1,24 +1,25 @@
-﻿namespace IWantApp.Main.Endpoints.Categories;
+﻿namespace IWantApp.Endpoints.Categories;
 
-public class CategoryPut {
-    public static string Template => "/category{id:guid}";
+public class CategoryPut
+{
+    public static string Template => "/categories/{id:guid}";
     public static string[] Methods => new string[] { HttpMethod.Put.ToString() };
-    public static  Delegate Handle => Action;
+    public static Delegate Handle => Action;
 
     [Authorize(Policy = "EmployeePolicy")]
-    public static async Task<IResult> Action([FromRoute] Guid id, [FromBody] CategoryRequest categoryRequest, HttpContext http, ApplicationDbContext context) {
-        var userId = http.User.Claims.First(claims => claims.Type == ClaimTypes.NameIdentifier).Value;
-        var category = context.Categories.Where(category => category.Id == id).FirstOrDefault();
+    public static async Task<IResult> Action(
+        [FromRoute] Guid id, HttpContext http, CategoryRequest categoryRequest, ApplicationDbContext context)
+    {
+        var userId = http.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
+        var category = context.Categories.Where(c => c.Id == id).FirstOrDefault();
 
-        if(category == null) {
+        if (category == null)
             return Results.NotFound();
-        }
 
         category.EditInfo(categoryRequest.Name, categoryRequest.Active, userId);
 
-        if (!category.IsValid) {
+        if (!category.IsValid)
             return Results.ValidationProblem(category.Notifications.ConvertToProblemDetails());
-        }
 
         await context.SaveChangesAsync();
 

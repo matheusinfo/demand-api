@@ -1,15 +1,18 @@
-﻿namespace IWantApp.Main.Endpoints;
+﻿namespace IWantApp.Endpoints;
 
-public static class ProblemDetailsExtensions {
-    public static Dictionary<string, string[]> ConvertToProblemDetails(this IReadOnlyCollection<Notification> notifications) {
+public static class ProblemDetailsExtensions
+{
+    public static Dictionary<string, string[]> ConvertToProblemDetails(this IReadOnlyCollection<Notification> notifications)
+    {
         return notifications
-            .GroupBy(group => group.Key)
-            .ToDictionary(group => group.Key, group => group.Select(item => item.Message).ToArray());
+                .GroupBy(g => g.Key)
+                .ToDictionary(g => g.Key, g => g.Select(x => x.Message).ToArray());
     }
 
-    public static Dictionary<string, string[]> ConvertToProblemDetails(this IEnumerable<IdentityError> error) {
-        var ditictionary = new Dictionary<string, string[]>();
-        ditictionary.Add("Error", error.Select(error => error.Description).ToArray());
-        return ditictionary;
+    public static Dictionary<string, string[]> ConvertToProblemDetails(this IEnumerable<IdentityError> error)
+    {
+        var dictionary = new Dictionary<string, string[]>();
+        dictionary.Add("Error", error.Select(e => e.Description).ToArray());
+        return dictionary;
     }
 }
